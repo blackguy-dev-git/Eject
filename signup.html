@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create your account – Eject</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style (1).css">
+</head>
+<body class="page-auth">
+
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 4l8 10H4z" fill="#F97316"/>
+          <path d="M5 19h14"/>
+        </svg>
+        Eject
+      </a>
+      <nav class="navbar__links">
+        <a href="index.html">Back to home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth">
+    <div class="auth__card">
+      <div class="auth__head">
+        <h1>Create your account</h1>
+        <p>Join Eject for free in under a minute.</p>
+      </div>
+
+      <form class="auth__form" action="#" method="post">
+        <div class="field">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" placeholder="maya_codes" autocomplete="username" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="At least 8 characters" autocomplete="new-password" required minlength="8">
+        </div>
+        <div class="field">
+          <label for="confirm">Confirm password</label>
+          <input id="confirm" name="confirm" type="password" placeholder="Repeat your password" autocomplete="new-password" required>
+        </div>
+        <label class="check"><input type="checkbox" name="terms" required> I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a></label>
+        <button type="submit" class="btn btn--fill btn--large btn--full">Create account</button>
+      </form>
+
+      <p class="auth__switch">Already have an account? <a href="signin.html">Sign in</a></p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© Eject</span>
+      <nav>
+        <a href="#">About</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Make sure both passwords match before the form is sent
+    const pw = document.getElementById("password");
+    const confirmPw = document.getElementById("confirm");
+    function check() {
+      confirmPw.setCustomValidity(pw.value === confirmPw.value ? "" : "Passwords do not match");
+    }
+    pw.addEventListener("input", check);
+    confirmPw.addEventListener("input", check);
+  </script>
+</body>
+</html>

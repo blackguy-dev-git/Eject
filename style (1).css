@@ -331,3 +331,79 @@ h1 {
   .arrow { display: none; }                         /* arrows look odd when stacked */
   .section__inner { padding-top: 64px; padding-bottom: 64px; }
 }
+
+
+/* ---------- 12. SIGN IN / SIGN UP ---------- */
+.page-auth { min-height: 100vh; display: flex; flex-direction: column; }
+
+.auth {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 20px;
+  background: var(--orange-bg);
+}
+
+.auth__card {
+  width: 100%;
+  max-width: 440px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(17, 24, 39, 0.06);
+}
+
+.auth__head { display: flex; flex-direction: column; gap: 8px; }
+.auth__head h1 { font-size: 32px; line-height: 1.15; letter-spacing: -0.02em; }
+.auth__head p  { font-size: 16px; color: var(--text-muted); }
+
+.auth__form { display: flex; flex-direction: column; gap: 20px; }
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 14px; font-weight: 600; }
+.field input {
+  height: 48px;
+  padding: 0 14px;
+  font: inherit;
+  font-size: 15px;
+  color: var(--text);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.field input::placeholder { color: var(--text-muted); }
+.field input:focus,
+.check input:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+  border-color: var(--orange);
+}
+
+.auth__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 14px;
+}
+.auth__row a, .auth__switch a, .check a { color: var(--orange-text); font-weight: 600; }
+.auth__row a:hover, .auth__switch a:hover, .check a:hover { color: var(--orange-dark); }
+
+.check { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-muted); }
+.check input { width: 18px; height: 18px; accent-color: var(--orange); flex-shrink: 0; }
+
+/* Full-width button (also works on <button>) */
+.btn--full { width: 100%; text-align: center; font-family: inherit; cursor: pointer; }
+
+.auth__switch { text-align: center; font-size: 15px; color: var(--text-muted); }
+
+@media (max-width: 700px) {
+  .auth { padding: 40px 16px; }
+  .auth__card { padding: 28px 22px; }
+}
