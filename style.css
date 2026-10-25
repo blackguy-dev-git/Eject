@@ -1,0 +1,333 @@
+/* =========================================================
+   EJECT – Landing page styles
+   Sections: 1 Variables · 2 Reset · 3 Layout helpers ·
+   4 Buttons · 5 Navbar · 6 Hero · 7 Features ·
+   8 How it works · 9 CTA · 10 Footer · 11 Mobile
+   ========================================================= */
+
+/* ---------- 1. VARIABLES (change colors here once) ---------- */
+:root {
+  --orange:        #F97316;
+  --orange-dark:   #EA580C;
+  --orange-light:  #FFEDD5;
+  --orange-bg:     #FFF7ED;
+  --orange-text:   #C2410C;
+
+  --text:          #1F2937;
+  --text-muted:    #6B7280;
+  --border:        #E5E7EB;
+  --white:         #FFFFFF;
+
+  --dark:          #111827;
+  --darker:        #0B1120;
+
+  --radius:        12px;
+  --font-main:     "Inter", system-ui, sans-serif;
+  --font-code:     "JetBrains Mono", monospace;
+}
+
+/* ---------- 2. RESET ---------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  color: var(--text);
+  background: var(--white);
+}
+
+a { color: var(--text-muted); text-decoration: none; }
+a:hover { color: var(--orange); }
+
+h1, h2, h3, p { margin: 0; }
+
+/* ---------- 3. LAYOUT HELPERS ---------- */
+/* Keeps content centered and max 1200px wide */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Shared layout for Features and How-it-works sections */
+.section__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+.section__inner--wide-gap { gap: 64px; }
+
+h2 {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+/* ---------- 4. BUTTONS ---------- */
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+}
+.btn--small { font-size: 15px; padding: 10px 20px; }
+.btn--large { font-size: 17px; padding: 15px 32px; }
+
+/* Orange filled button */
+.btn--fill { background: var(--orange); color: var(--white); }
+.btn--fill:hover { background: var(--orange-dark); color: var(--white); }
+
+/* White button with grey border */
+.btn--outline { border-color: var(--border); color: var(--text); }
+.btn--outline:hover { border-color: var(--orange); color: var(--orange); }
+
+/* ---------- 5. NAVBAR ---------- */
+.navbar { border-bottom: 1px solid var(--border); }
+
+.navbar__inner {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-code);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--text);
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.navbar__links > a:not(.btn) { font-size: 15px; font-weight: 500; }
+
+/* ---------- 6. HERO ---------- */
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  padding-top: 88px;
+  padding-bottom: 96px;
+}
+
+.badge {
+  background: var(--orange-light);
+  color: var(--orange-text);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+h1 {
+  font-size: 68px;
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+.accent { color: var(--orange); }   /* the orange word "connect" */
+
+.hero__text {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  max-width: 640px;
+}
+
+.hero__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+/* --- Example post card --- */
+.post {
+  width: 100%;
+  max-width: 680px;
+  margin-top: 48px;
+  padding: 24px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(17, 24, 39, 0.06);
+}
+
+.post__author { display: flex; align-items: center; gap: 12px; }
+.post__author strong { display: block; font-size: 15px; }
+.post__author small  { display: block; font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--orange-light);
+  color: var(--orange-dark);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post > p { font-size: 16px; line-height: 1.5; }
+
+/* Dark code box */
+.code {
+  margin: 0;
+  padding: 20px 22px;
+  background: var(--dark);
+  color: var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font-code);
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-x: auto;       /* scroll sideways instead of breaking layout */
+}
+.code .kw { color: var(--orange); }   /* keywords: export, let, return */
+.code .fn { color: #7DD3FC; }         /* functions & numbers */
+
+.post__stats {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.post__stats span { display: flex; align-items: center; gap: 8px; }
+
+/* ---------- 7. FEATURES ---------- */
+.features { background: var(--orange-bg); }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;        /* cards stack on small screens automatically */
+  gap: 24px;
+  width: 100%;
+}
+
+.card {
+  flex: 1 1 280px;        /* grow equally, minimum width 280px */
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(17, 24, 39, 0.04);
+}
+.card h3 { font-size: 22px; font-weight: 700; }
+.card p  { font-size: 16px; line-height: 1.6; color: var(--text-muted); }
+
+.icon-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--orange-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- 8. HOW IT WORKS ---------- */
+.steps {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 24px;
+}
+
+.step {
+  flex: 1 1 220px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+.step h3 { font-size: 22px; font-weight: 700; }
+.step p  { font-size: 16px; line-height: 1.6; color: var(--text-muted); }
+
+.step__number {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--white);
+  font-family: var(--font-code);
+  font-weight: 700;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow { margin-top: 16px; }   /* lines the arrow up with the number circles */
+
+/* ---------- 9. CALL TO ACTION ---------- */
+.cta { background: var(--dark); }
+
+.cta__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding-top: 112px;
+  padding-bottom: 112px;
+  text-align: center;
+}
+.cta h2 { font-size: 44px; color: var(--white); }
+
+/* ---------- 10. FOOTER ---------- */
+.footer { background: var(--darker); border-top: 1px solid var(--text); }
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  font-size: 14px;
+  color: #D1D5DB;
+}
+.footer nav { display: flex; flex-wrap: wrap; gap: 28px; }
+.footer a   { color: #D1D5DB; font-size: 14px; }
+.footer a:hover { color: var(--orange); }
+
+/* ---------- 11. MOBILE (screens 700px wide or less) ---------- */
+@media (max-width: 700px) {
+  .container { padding: 0 20px; }
+
+  h1 { font-size: 40px; }
+  h2, .cta h2 { font-size: 30px; }
+
+  .navbar__links { gap: 14px; }
+  .navbar__links > a:not(.btn) { display: none; }  /* hide text links, keep buttons */
+
+  .arrow { display: none; }                         /* arrows look odd when stacked */
+  .section__inner { padding-top: 64px; padding-bottom: 64px; }
+}

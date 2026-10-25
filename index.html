@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eject – Where programmers connect</title>
+
+  <!-- Fonts: Inter for text, JetBrains Mono for code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ 1. NAVBAR ============ -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="#" class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 4l8 10H4z" fill="#F97316"/>
+          <path d="M5 19h14"/>
+        </svg>
+        Eject
+      </a>
+
+      <nav class="navbar__links">
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#" class="btn btn--outline btn--small">Sign in</a>
+        <a href="#" class="btn btn--fill btn--small">Sign up</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ 2. HERO ============ -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <span class="badge">The social network for developers</span>
+
+        <h1>Where programmers <span class="accent">connect</span></h1>
+        <p class="hero__text">Share code, follow developers, and talk shop in one place</p>
+
+        <div class="hero__buttons">
+          <a href="#" class="btn btn--fill btn--large">Join Eject</a>
+          <a href="#" class="btn btn--outline btn--large">Sign in</a>
+        </div>
+
+        <!-- Example post card -->
+        <article class="post">
+          <div class="post__author">
+            <div class="avatar">MK</div>
+            <div>
+              <strong>@maya_codes</strong>
+              <small>2h ago · #typescript</small>
+            </div>
+          </div>
+
+          <p>Tiny debounce helper I keep reusing. Works with any async handler.</p>
+
+          <pre class="code"><span class="kw">export function</span> <span class="fn">debounce</span>(fn, ms = <span class="fn">300</span>) {
+  <span class="kw">let</span> timer;
+  <span class="kw">return</span> (...args) =&gt; {
+    <span class="fn">clearTimeout</span>(timer);
+    timer = <span class="fn">setTimeout</span>(() =&gt; fn(...args), ms);
+  };
+}</pre>
+
+          <div class="post__stats">
+            <span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Likes"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+              248
+            </span>
+            <span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Comments"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              36
+            </span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ 3. FEATURES ============ -->
+    <section id="features" class="features">
+      <div class="container section__inner">
+        <h2>What you can do on Eject</h2>
+
+        <div class="cards">
+          <div class="card">
+            <div class="icon-circle">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+            </div>
+            <h3>Share code</h3>
+            <p>Post snippets with syntax highlighting and show off what you are building.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon-circle">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>
+            </div>
+            <h3>Connect</h3>
+            <p>Follow other developers and build a feed full of people worth learning from.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon-circle">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg>
+            </div>
+            <h3>Get help</h3>
+            <p>Ask about bugs, answer questions, and get unstuck faster together.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. HOW IT WORKS ============ -->
+    <section id="about" class="how">
+      <div class="container section__inner section__inner--wide-gap">
+        <h2>How it works</h2>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step__number">1</div>
+            <h3>Create account</h3>
+            <p>Sign up free in under a minute.</p>
+          </div>
+
+          <svg class="arrow" width="40" height="24" viewBox="0 0 40 24" fill="none" stroke="#F97316" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h34M28 4l8 8-8 8"/></svg>
+
+          <div class="step">
+            <div class="step__number">2</div>
+            <h3>Build profile</h3>
+            <p>Add your stack, links, and a short bio.</p>
+          </div>
+
+          <svg class="arrow" width="40" height="24" viewBox="0 0 40 24" fill="none" stroke="#F97316" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h34M28 4l8 8-8 8"/></svg>
+
+          <div class="step">
+            <div class="step__number">3</div>
+            <h3>Start posting</h3>
+            <p>Share your first snippet and follow others.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. CALL TO ACTION ============ -->
+    <section class="cta">
+      <div class="container cta__inner">
+        <h2>Ready to join Eject?</h2>
+        <a href="#" class="btn btn--fill btn--large">Sign up free</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ 6. FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© Eject</span>
+      <nav>
+        <a href="#">About</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
